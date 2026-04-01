@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flicksy - Movie Explorer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">🎬 Flicksy</h1>
+            <p class="tagline">Discover Your Next Favorite Movie</p>
+        </header>
+
+        <section class="controls-section">
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search movies by name..." autocomplete="off">
+                <button id="searchBtn" class="search-btn">Search</button>
+            </div>
+
+            <div class="filter-sort-container">
+                <div class="filter-group">
+                    <label for="ratingFilter">Filter by Rating:</label>
+                    <select id="ratingFilter" class="filter-select">
+                        <option value="">All Ratings</option>
+                        <option value="8">8.0+</option>
+                        <option value="7">7.0+</option>
+                        <option value="6">6.0+</option>
+                        <option value="5">5.0+</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="sortSelect">Sort by:</label>
+                    <select id="sortSelect" class="filter-select">
+                        <option value="popularity">Popularity</option>
+                        <option value="release_date">Newest</option>
+                        <option value="release_date_old">Oldest</option>
+                        <option value="rating">Highest Rating</option>
+                    </select>
+                </div>
+
+                <button id="resetBtn" class="reset-btn">Reset</button>
+            </div>
+        </section>
+
+        <div id="loadingIndicator" class="loading">
+            <p>Loading movies...</p>
+        </div>
+
+        <div id="errorMessage" class="error-message hidden"></div>
+
+        <section class="movies-section">
+            <div id="moviesGrid" class="movies-grid"></div>
+        </section>
+
+        <div id="noResults" class="no-results hidden">
+            <p>No movies found. Try adjusting your search.</p>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
